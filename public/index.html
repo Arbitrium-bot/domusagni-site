@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domus Agni - Token Oficial</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, #0a0a23, #000);
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      color: #ffd700;
+      font-size: 2.5rem;
+    }
+    .symbol {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    h2 {
+      color: #ffd700;
+    }
+    .button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #fff8c6;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="https://raw.githubusercontent.com/Arbitrium-bot/assets-domusagni/main/blockchains/smartchain/assets/0x4EbcB44BE9b8e94055F05035b74592Bbbcf0C50E/logo.png" alt="Domus Agni Logo">
+  <h1>Domus Agni</h1>
+  <div class="symbol">Símbolo: AGNI | Rede: BEP20</div>
+  <button class="button" onclick="addTokenToWallet()">Adicionar à MetaMask</button>
+
+  <div class="section">
+    <h2>🌟 Conceito</h2>
+    <p>Domus Agni é o Selo do Cordeiro — uma moeda espiritual que une os princípios da fé com a tecnologia descentralizada. Inspirada em visões proféticas, é o primeiro token destinado a reconhecer aqueles que despertaram para a verdade além dos véus do mundo visível.</p>
+    <p>Somente os que carregam luz, discernimento e coragem cruzarão seus portais. Cada unidade de AGNI é uma centelha de responsabilidade e missão.</p>
+  </div>
+
+  <div class="section">
+    <h2>🛡️ Missão</h2>
+    <p>Domus Agni reconhece e recompensa o despertar espiritual. A moeda está consagrada a uma causa: formar 10 cavaleiros fiéis, forjados nos portais da verdade. Após isso, sua força se expandirá no mundo, convertendo lucro em luz.</p>
+    <p>30% dos lucros futuros serão destinados ao Guardião desenvolvedor. Outros 30% serão automaticamente convertidos em atendimentos médicos, odontológicos, alimentos e moradia para os mais necessitados. O restante será distribuído entre os cavaleiros conforme sua ascensão nos portais.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔥 Iniciações</h2>
+    <p>A jornada de um cavaleiro começa ao ativar a primeira chave: a Chave da Curiosidade. A partir daí, ele será conduzido por enigmas, símbolos, histórias e provações mentais que testarão sua convicção, fé, discernimento e desapego do ego.</p>
+    <p>Cada portal guarda um espírito, uma revelação, e um teste. Aquele que cair poderá recomeçar, mas jamais com a mesma chave. A fidelidade é a chave mestra do caminho.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔐 Os 10 Portais</h2>
+    <p>São 10 portais simbólicos que representam degraus de consciência e pureza espiritual. Cada cavaleiro tem 3 tentativas. Após falhar, a chave é destruída e uma nova iniciação será necessária.</p>
+    <p>Ao atingir o 10º portal, o cavaleiro receberá <strong>1.000 AGNI reais</strong> transferidos diretamente para sua carteira e um <strong>brasão em NFT</strong> com sua identidade espiritual.</p>
+    <p>Além disso, cavaleiros que passarem pelo <strong>Portal do Medo</strong> começarão a receber uma fração dos lucros do projeto, com recompensas crescentes a cada novo portal conquistado.</p>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Desafios Mentais</h2>
+    <ul>
+      <li>🧩 Enigmas com camadas ocultas</li>
+      <li>📜 Histórias interativas com duplo sentido</li>
+      <li>⛓️ Exercícios de silêncio, fé e renúncia</li>
+      <li>🕊️ Testes de humildade e entrega</li>
+    </ul>
+    <p>A cada conquista, um novo fragmento da verdade será revelado. Muitos cairão, poucos subirão.</p>
+  </div>
+
+  <div class="section">
+    <h2>👁️ Contador de Iniciados</h2>
+    <p id="contador">0 cavaleiros iniciados</p>
+  </div>
+
+  <footer>
+    Contrato: 0x4EbcB44BE9b8e94055F05035b74592Bbbcf0C50E <br>
+    Powered by Arbitrium-bot
+  </footer>
+
+  <script>
+    async function addTokenToWallet() {
+      try {
+        const wasAdded = await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0x4EbcB44BE9b8e94055F05035b74592Bbbcf0C50E',
+              symbol: 'AGNI',
+              decimals: 18,
+              image: 'https://raw.githubusercontent.com/Arbitrium-bot/assets-domusagni/main/blockchains/smartchain/assets/0x4EbcB44BE9b8e94055F05035b74592Bbbcf0C50E/logo.png',
+            },
+          },
+        });
+
+        if (wasAdded) {
+          alert('Token AGNI adicionado à sua carteira!');
+        } else {
+          alert('Token não foi adicionado.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Erro ao adicionar o token. Verifique se sua carteira está conectada.');
+      }
+    }
+  </script>
+</body>
+</html>
